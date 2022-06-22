@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "uwuifier",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Uwuifier",
+  "description": "Translates all text in game into uwulang.",
   "authors": [
-    "Me!"
+    "DownloadableFox"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://downloadablefox.space/",
+    "sources": "https://github.com/DownloadableFox/Uwuifier"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/uwuifier/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "me.downloadablefox.uwuifier.Uwuifier"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "uwuifier.mixins.json"
   ],
 
   "depends": {
