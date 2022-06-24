@@ -10,7 +10,7 @@ import java.util.Map;
 public class Translator {
 
     private static final Map<String, String> WordsDictionary = new HashMap<>();
-    private static final Map<String, String> PhrasesDictionary = new HashMap<>();
+    private static final Map<String, String> ExpressionDictionary = new HashMap<>();
 
     static {
         // Furry dictionary taken from https://lingojam.com/FurryTalk
@@ -24,7 +24,9 @@ public class Translator {
         WordsDictionary.put("celebrity", "popufur");
         WordsDictionary.put("cheese", "sergal");
         WordsDictionary.put("child", "cub");
-        WordsDictionary.put("computer/robot/cyborg", "protogen");
+        WordsDictionary.put("computer", "protogen");
+        WordsDictionary.put("robot", "protogen");
+        WordsDictionary.put("cyborg", "protogen");
         WordsDictionary.put("cum", "cummy wummy~");
         WordsDictionary.put("disease", "pathOwOgen");
         WordsDictionary.put("dog", "good boy");
@@ -48,14 +50,12 @@ public class Translator {
         WordsDictionary.put("persona", "fursona");
         WordsDictionary.put("pervert", "furvert");
         WordsDictionary.put("police", "pawlice");
-        WordsDictionary.put("police department", "PAW Patrol");
         WordsDictionary.put("porn", "yiff");
         WordsDictionary.put("roar", "rawr");
         WordsDictionary.put("shout", "awoo");
         WordsDictionary.put("slut", "fox");
         WordsDictionary.put("source", "sauce");
         WordsDictionary.put("straight", "gay");
-        WordsDictionary.put("hunor", "huwunor");
         WordsDictionary.put("tale", "tail");
         WordsDictionary.put("e621", "monosodium glutamate");
         WordsDictionary.put("the", "teh");
@@ -66,11 +66,14 @@ public class Translator {
         WordsDictionary.put("you", "chu");
         WordsDictionary.put("your", "ur");
 
-        // Phrases
-        PhrasesDictionary.put("i have sinned", "i've been naughty");
-        PhrasesDictionary.put("have sex with", "yiff");
-        PhrasesDictionary.put("what's dis", "OwO what's dis");
-        PhrasesDictionary.put("chu are", "chu is");
+        // Expressions
+        ExpressionDictionary.put("!", "owo!");
+        ExpressionDictionary.put("?", "uwu?");
+        ExpressionDictionary.put(":)", ":3");
+        ExpressionDictionary.put(":o", "OwO");
+        ExpressionDictionary.put(":d", "UwU");
+        ExpressionDictionary.put(":p", ">w<");
+        ExpressionDictionary.put("xd", "x3");
     }
 
     public static String translate(final String text) {
@@ -83,24 +86,24 @@ public class Translator {
                 continue;
             }
 
+            if (ExpressionDictionary.containsKey(word)) {
+                translated.add(ExpressionDictionary.get(word));
+                continue;
+            }
+
             translated.add(
                     word
                         .replace("r", "w")
                         .replace("l", "w")
-                        .replace(",", "~")
-                        .replace(";", "~")
-                        .replace("!", " owo!")
-                        .replace("?", " uwu?")
-                        .replace(":)", ":3")
-                        .replace(":o", "OwO")
-                        .replace(":d", "UwU")
-                        .replace(":p", ">w<")
-                        .replace("xd", "x3")
                         .replace("th", "d")
-                        .replaceAll("o(?!$)", "u")
+                        .replaceFirst(",$", "~")
+                        .replaceFirst(";$", "~")
+                        .replaceFirst("!$", " owo!")
+                        .replaceFirst("\\?$", " uwu?")
+                        //.replaceAll("o(?!$)", "u")
             );
         }
 
-        return String.join(" ", translated);
+        return (text.startsWith(" ")) ? " " : "" + String.join(" ", translated) + (text.endsWith(" ") ? " " : "");
     }
 }
