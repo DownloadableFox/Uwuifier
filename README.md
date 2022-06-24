@@ -1,7 +1,7 @@
 
 # Uwuifier (for Fabric)
 [![Minecraft Versions](https://img.shields.io/badge/Minecraft-1.19-9450cc)](https://fabricmc.net/)
-![license](https://img.shields.io/github/license/DownloadableFox/Uwuifier)
+![license](https://img.shields.io/github/license/DownloadableFox/Uwuifier)(https://twitter.com/LoadableFox)
 ![twitter](https://img.shields.io/twitter/follow/LoadableFox?style=social)
 
 Translate every text in Minecraft to Furrylingo.
