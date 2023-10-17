@@ -9,11 +9,11 @@
     "DownloadableFox"
   ],
   "contact": {
-    "homepage": "https://downloadablefox.space/",
+    "homepage": "https://downloadablefox.dev/",
     "sources": "https://github.com/DownloadableFox/Uwuifier"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/uwuifier/icon.png",
 
   "environment": "*",
