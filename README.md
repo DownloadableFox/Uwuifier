@@ -24,7 +24,7 @@ Ask for Forge and get bonked!
 **Warning: This mod is still on preview and might be incompatible with some other mods! Use it with caution.**
 
 
-# Screenshots
+## Screenshots
 ![Title Screen](https://user-images.githubusercontent.com/58178791/175441228-dd29bd66-5f35-48a4-be0e-ca4c605005f7.png)
 
 **Chat comparison**
