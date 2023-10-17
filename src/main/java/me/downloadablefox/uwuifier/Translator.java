@@ -104,6 +104,6 @@ public class Translator {
             );
         }
 
-        return (text.startsWith(" ")) ? " " : "" + String.join(" ", translated) + (text.endsWith(" ") ? " " : "");
+        return (text.startsWith(" ")) ? " " : String.join(" ", translated) + (text.endsWith(" ") ? " " : "");
     }
 }
